@@ -2,6 +2,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
+
     static  HashMap<String, Double> list = new HashMap<>();
    static Scanner input2 = new Scanner(System.in);
    static   Scanner input = new Scanner(System.in);
@@ -27,9 +28,19 @@ public class Main {
         skaiciuotiAtlyginima(bazinisAtlyginimas, menesioNorma);
     }
 
+    /**
+     * Skaičiuojamas atlyginimas
+     * @param bazinisAtlyginimas atlyginimo dydis
+     * @param norma normos reikšmė
+     */
     static void skaiciuotiAtlyginima(double bazinisAtlyginimas, double norma) {
         System.out.println(bazinisAtlyginimas + " * " + norma + " = " + bazinisAtlyginimas * norma);
     }
+
+    /**
+     * Tikrina ar yra tokia norma sąraše
+     * @param norma Nurodoma norma
+     */
     static void tikrinti (String norma){
 
         while (!list.containsKey(norma)) {
