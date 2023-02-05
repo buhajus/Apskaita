@@ -37,6 +37,11 @@ public class Main {
     static void skaiciuotiAtlyginima(double bazinisAtlyginimas, double norma) {
         System.out.println(bazinisAtlyginimas + " * " + norma + " = " + String.format("%.2f", bazinisAtlyginimas * norma));
     }
+
+    /**
+     * Test su ta pačia f-ja, tik vienu parametru
+     * @param bazinisAtlyginimas test
+     */
     static void skaiciuotiAtlyginima(double bazinisAtlyginimas){
         System.out.printf("%.3f%n",bazinisAtlyginimas * 1.15);
     }
