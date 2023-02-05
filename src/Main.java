@@ -22,10 +22,11 @@ public class Main {
         bazinisAtlyginimas = input.nextDouble();
         System.out.println("Įveskite darbuotojo normą: ");
         System.out.println(list);
-        norma = input2.nextLine();
-        tikrinti(norma);
+
+        norma = tikrintiNorma(input2.nextLine());
         menesioNorma = list.get(norma);
         skaiciuotiAtlyginima(bazinisAtlyginimas, menesioNorma);
+        skaiciuotiAtlyginima(bazinisAtlyginimas);
     }
 
     /**
@@ -34,20 +35,24 @@ public class Main {
      * @param norma normos reikšmė
      */
     static void skaiciuotiAtlyginima(double bazinisAtlyginimas, double norma) {
-        System.out.println(bazinisAtlyginimas + " * " + norma + " = " + bazinisAtlyginimas * norma);
+        System.out.println(bazinisAtlyginimas + " * " + norma + " = " + String.format("%.2f", bazinisAtlyginimas * norma));
+    }
+    static void skaiciuotiAtlyginima(double bazinisAtlyginimas){
+        System.out.printf("%.3f%n",bazinisAtlyginimas * 1.15);
     }
 
     /**
      * Tikrina ar yra tokia norma sąraše
      * @param norma Nurodoma norma
      */
-    static void tikrinti (String norma){
+    static String tikrintiNorma(String norma){
 
         while (!list.containsKey(norma)) {
             System.out.println("Tokio nėra");
             System.out.println("Įveskite darbuotojo normą: ");
             norma = input2.nextLine();
         }
+        return norma;
 
     }
 }
